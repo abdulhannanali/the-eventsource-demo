@@ -1,5 +1,5 @@
 {
-  "name": "bitcoin-server-events",
+  "name": "the-eventsource-demo",
   "version": "0.0.1",
   "description": "A demo using Server Sent Events to send related data to the client",
   "main": "server.js",
