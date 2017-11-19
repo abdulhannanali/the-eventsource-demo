@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', demo);
 
 function demo() {
-    const LOCATION_SOURCE_BASE_URL = 'http://localhost:3000/iss-location';
+    const LOCATION_SOURCE_BASE_URL = '/iss-location';
     
     const latitudeValue = document.querySelector('.location-field.latitude .value');
     const longitudeValue = document.querySelector('.location-field.longitude .value');
