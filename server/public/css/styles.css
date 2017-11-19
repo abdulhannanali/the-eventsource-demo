@@ -1,0 +1,123 @@
+.header {
+    text-align: center;
+    font-family: 'Zilla Slab', serif;
+    font-size: 1.4em;
+    padding-bottom: 10px;
+}
+
+.header p {
+    margin: 2px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 760px;
+    text-align: center;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.status {
+    display: inline-block;
+    border-top: 2px indianred solid;
+    border-bottom: 2px black solid;
+    padding: 5px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.status .status-dot {
+    display: inline-block;
+    border-radius: 60%;
+    padding: 10px;
+}
+
+.status-dot.not-available {
+    background-color: grey;
+    border-bottom: 2px grey solid;
+}
+
+.status-dot.open {
+    background: green;
+    border-bottom: 2px green solid;    
+}
+
+.status-dot.closed {
+    background: red;
+    border-bottom: 2px red solid;    
+}
+
+.status-dot.connecting {
+    background:blue;
+    border-bottom: 2px blue solid;    
+}
+
+.status .status-text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.location {
+    margin: 10px;
+    text-align: center;
+}
+
+.location .location-field {
+    padding: 10px;
+    border-left: 1px grey solid;
+    border-bottom: 1px grey solid;
+    border-top: 1px green solid;
+}
+
+.location .location-field .label {
+    text-align: left;
+    margin-left: 3px;
+}
+
+.location .location-field .value {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/**
+ * Stylings for the map 
+ **/
+.iss-location-map {
+    width: 100%;
+    padding: 5px;
+}
+
+.iss-location-map  .location-map-container {
+    width: 100%;
+    height: 600px;
+    border: 1px greenyellow solid;
+    overflow: hidden;
+    background:black;
+}
+
+.iss-location-map .location-map-container .loading-map {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    color: rgb(74, 111, 182);
+    border-top: 2px rgb(71, 168, 71) solid;    
+    border-bottom: 2px rgb(71, 168, 71) solid;
+    margin-top: 280px;
+    font-size: 34px;
+}
+
+/**
+  * Footer styles
+  */
+.footer {
+    border-top: 2px rgb(164, 221, 136) solid;
+    font-family: 'Zilla Slab', serif;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 3px;
+}

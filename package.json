@@ -1,0 +1,38 @@
+{
+  "name": "bitcoin-server-events",
+  "version": "0.0.1",
+  "description": "A demo using Server Sent Events to send related data to the client",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulhannanali/bitcoin-server-events.git"
+  },
+  "keywords": [
+    "eventsource",
+    "server",
+    "sent",
+    "events",
+    "events",
+    "http"
+  ],
+  "author": "Hannan Ali <npm+ali.abdulhannan@gmail.com>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/abdulhannanali/bitcoin-server-events/issues"
+  },
+  "homepage": "https://github.com/abdulhannanali/bitcoin-server-events#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^5.0.0-alpha.2",
+    "morgan": "^1.9.0",
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "nock": "^9.1.0"
+  }
+}

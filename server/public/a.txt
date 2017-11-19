@@ -1,0 +1,19 @@
+
+            <div class="info">
+                <h2>The EventSource Demo</h2>
+                <p>
+                    Tracking the location, communicated with the help of oldy <code>EventSource</code> API,
+                    available in Chrome and Firefox. This is the last goodbye from me to the EventSource
+                    API which is not going to be made available in ServiceWorker and Edge people already 
+                    demand it's deprecation. Let's make EventSource great again.
+                </p>
+                <p>
+                    Learn more about using the EventSource API from <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events">Using Server Sent Events</a> on Mozilla Developer Network.
+                </p>
+            </div>
+            
+            <!-- About section containing information about the Demo -->
+            <div class="about">
+                <h3>About the Demo</h3>
+                <p>The Demo uses Server Sent Events to provide the information of the user</p>
+            </div>

@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>ISSLocation EventSource</title>
+        <!-- <link hr   ef="https://fonts.googleapis.com/css?family=Roboto|Zilla+Slab" rel="stylesheet"> -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <h2>The EventSource Demo 🎉💃👋</h2>
+            <p>
+                One last good bye 🤗👋 to the EventSource from me<br>
+                Do not use this API in production please!
+                <br><br>
+            </p>
+            <p class="browser-supported">Supported on Chrome 6+ and Firefox (no IE or Edge support 😂)</p>
+            <p>Learn more about demo and about EventSource API on <a href="https://github.com/abdulhannanali/the-eventsource-demo">Github Repo</a></p>
+        </div>
+
+        <!-- `container` containing the body of the response -->
+        <div class="container">
+            <div class="status">
+                <div class="status-dot not-available"></div>
+                <div class="status-text">Not Available</div>
+            </div>
+            
+            <!-- Location map providing the current location of International Space Static -->
+            <div class="iss-location-map">
+                <h2 class="location-map-title">ISS Location Map</h2>
+                <p>
+                    Spot the ISS satellite 🛰✨ in the map below in realtime 🕐.
+                </p>
+
+                <div class="location-map-container" id="location-map">
+                    <div class="loading-map">Satellite 🛰 Map 🗺</div>
+                </div>
+            </div>
+            
+            <div class="location">
+                <h2 class="location-title">Location 🛰🌠🌍</h2>
+
+                <div class="location-field latitude">
+                    <span class="label">Latitude</span>
+                    <span class="value">Not Available</span>
+                </div>
+                <div class="location-field longitude">
+                    <span class="label">Longitude</span>
+                    <span class="value">Not Available</span>    
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="footer">
+            <p>Thanks 🙇 to LeafletJS and Mapbox which made the very pretty Map possible and easy without me doing much.</p>
+            <p>Licensed ⚖ under MIT LICENSE. Source code is available on <a href="">Github Repo</a> for this demo.</p>
+        </div>
+
+        <script type="text/javascript" src="js/formatcoords.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
