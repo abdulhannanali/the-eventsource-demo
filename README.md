@@ -20,7 +20,7 @@ EventSource provides a reliable way to push unidirectional messages from Server 
 
 ### At least better than polling
 
-Polling was once one of the most widely used way to do realtime on the web, but it was inefficient and slow since it required many round trips and doing polling increased the server costs as well as latency in the system. In scenarios where server is the main message provider, EventSource provides a slick autoconnection management system built in browser natively and saves you the hassle of managing connections and reconnecting with the server. 
+Polling was once one of the most widely used way to do realtime on the web, but it was inefficient and slow since it required many round trips and doing polling increased the server costs as well as latency in the system. In scenarios where server is the main message provider, EventSource provides a slick autoconnection management system built in browser natively and saves you the hassle of managing connections and reconnecting with the server. Once the connection is established, it takes no more roundtrips to get the data from the server, and a few techniques can be used to sustain the connection for longer periods of time.
 
 Jake Archibald does think it has it's own place in the Web
 
@@ -28,7 +28,13 @@ Jake Archibald does think it has it's own place in the Web
 
 ### State of Browser support for EventSource
 
-EventSource is definitely not the priority for new browsers when it comes to a unidirectional push standard. Internet explorer does not implement it and Edge seems to have [no plans](https://github.com/w3c/ServiceWorker/issues/947#issuecomment-255626995) to inroduce it within it's own browser. Unlike WebSockets, [EventSource](https://github.com/w3c/ServiceWorker/issues/947) is not exposed in Service Workers too, you are better off thinking about **HTTP/2, WebSockets, WebRTC** for your realtime communication logic. As these newer technologies are well thought approach for realtime and have a wider developer community by now.
+EventSource is definitely not the priority for new browsers when it comes to a unidirectional push standard. Internet explorer does not implement it and Edge seems to have [no plans](https://github.com/w3c/ServiceWorker/issues/947#issuecomment-255626995) to inroduce it within it's own browser. Unlike WebSockets, [EventSource](https://github.com/w3c/ServiceWorker/issues/947) is not exposed in Service Workers too, you are better off thinking about **HTTP/2, WebSockets, WebRTC** for your realtime communication logic. 
+
+### Text only protocol
+
+EventSource is good for textual communication only and falls it's mark when it comes to binary
+data, because of the nature of protocol, and rules governing the communication and appropriate parsing. Meanwhile, WebSockets allow you to do binary communication efficiently using the Blob API in browsers which provides an abstraction over the binray data, speeding things up for the client. 
+
 
 ## Contributing
 
