@@ -109,6 +109,30 @@
 }
 
 /**
+  * Styles for the Raw Output Section
+  */
+.raw-event {
+    border-top: 2px #e9e9e9 solid;
+    border-bottom: 2px #e9e9e9 solid;
+    margin: 10px 0;
+}
+
+.raw-event .raw-event-output {
+    padding: 3px;
+    font-size: 12px;
+    max-height: 300px;
+    font-family: 'Roboto Mono', 'Courier Sans Ms', monospace;
+    background: rgb(248, 234, 234);
+    text-align: left;
+    white-space: pre-wrap;
+    overflow: scroll;
+}
+
+.curl-command .command-output {
+    white-space: pre-wrap;
+}
+
+/**
   * Footer styles
   */
 .footer {

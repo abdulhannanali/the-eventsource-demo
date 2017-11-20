@@ -7,7 +7,9 @@ function demo() {
     const longitudeValue = document.querySelector('.location-field.longitude .value');
     const statusDot = document.querySelector('.status .status-dot');
     const statusText = document.querySelector('.status .status-text');
-    
+    const rawOutputText = document.querySelector('.raw-event .raw-event-output');
+    const curlCommandOutput = document.querySelector('.curl-command .command-output');
+
     const issMapContainer = document.querySelector('.iss-location-map .location-map-container');
 
     const connectionStates = {
@@ -84,8 +86,10 @@ function demo() {
         
         let popupOpened = false;
         locationSource.addEventListener('location', (event) => {
-            const { position } = JSON.parse(event.data);
+            
+            const { position, timestamp } = JSON.parse(event.data);
             const { latitude, longitude } = position;
+            addLocationEvent(event.data, timestamp);
 
             const latlng = [ latitude, longitude ];
             setMarkerLocation(latlng);
@@ -109,11 +113,56 @@ function demo() {
             updateConnectionStatus();
         });
     
-        function setMarkerLocation (latlng) {
+        function setMarkerLocation(latlng) {
             satelliteMarker.setLatLng(latlng);
         }
     }
 
+    
+    /**
+     * Creates an event with the help of the given parameters
+     * @param {*} eventName 
+     * @param {*} data 
+     */
+    function createEvent(eventName, data, id, retry) {
+        let eventString = '';
+        
+        if (eventName) {
+            eventString += 'event: ' + eventName + '\n';
+        }
 
+        if (id) {
+            eventString += 'id: ' + id + '\n';
+        }
+
+        if (retry) {
+            eventString += 'retry: ' + retry + '\n';
+        }
+        
+        if (data) {
+            eventString += 'data: ' + data + '\n';
+        }
+
+        eventString += '\n\n';
+        return eventString;
+    }
+
+    function addLocationEvent(eventData, timestamp) {
+        const event = createEvent('location', eventData, timestamp);
+        rawOutputText.textContent += '\n' + event + '\n\n';
+    }
+
+    function addCurlCommand() {
+        const curlCommand = (
+            'curl ' + window.location.origin + LOCATION_SOURCE_BASE_URL + ' ' +
+            '-H ' + "'cache-control: no-cache' " +
+            '-H ' + "'content-type: text/event-stream' " +
+            '-H ' + "'request-source: curl-command'"
+        );
+
+        curlCommandOutput.textContent = curlCommand;
+    }
+
+    addCurlCommand();
     initializeMap();
 }
